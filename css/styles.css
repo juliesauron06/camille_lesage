@@ -893,3 +893,97 @@ main > section:nth-child(even) {
 body.modal-open {
   overflow: hidden;
 }
+
+/* ==========================================================================
+   Section Au-delà de Tokyo
+   ========================================================================== */
+
+.beyond {
+  padding-block: var(--space-xl);
+}
+
+.beyond-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .beyond-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .beyond-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .beyond-gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.dest-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 240px;
+  margin: 0;
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: var(--cream-light);
+  background-image:
+    linear-gradient(to top, rgba(20, 15, 13, 0.9) 0%, rgba(20, 15, 13, 0.2) 65%, rgba(20, 15, 13, 0.4) 100%),
+    var(--cover, linear-gradient(135deg, #2a1614, #14100e));
+  background-size: cover;
+  background-position: center;
+}
+
+.dest-card__kanji {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-md);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.2;
+}
+
+.dest-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dest-card__name {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.dest-card__theme {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.dest-card__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+.dest-card__meta .icon {
+  width: 1em;
+  height: 1em;
+}
