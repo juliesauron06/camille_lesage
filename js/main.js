@@ -47,3 +47,16 @@ if (siteHeader && heroSection && "IntersectionObserver" in window) {
   // Repli (navigateur sans IntersectionObserver) : nav toujours visible
   siteHeader.classList.add("is-visible");
 }
+
+// « Voir plus / Voir moins » dans la section À propos
+const aboutToggle = document.querySelector(".link-toggle");
+const aboutMore = document.querySelector("#about-more");
+
+if (aboutToggle && aboutMore) {
+  aboutToggle.addEventListener("click", () => {
+    const expanded = aboutToggle.getAttribute("aria-expanded") === "true";
+    aboutToggle.setAttribute("aria-expanded", String(!expanded));
+    aboutMore.hidden = expanded;
+    aboutToggle.textContent = expanded ? "Voir plus" : "Voir moins";
+  });
+}
