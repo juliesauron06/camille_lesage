@@ -419,14 +419,6 @@ section[id] {
   user-select: none;
 }
 
-/* Filigrane de la section Visites : en bas à droite */
-.tours .section-kanji {
-  top: auto;
-  left: auto;
-  right: 0.05em;
-  bottom: 0;
-}
-
 .about-grid {
   position: relative;
   z-index: 1;
@@ -1039,17 +1031,6 @@ body.modal-open {
   box-shadow: 0 10px 30px rgba(26, 26, 24, 0.12);
 }
 
-.exp-card__kanji {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
 .exp-card__body {
   position: relative;
   display: flex;
@@ -1065,7 +1046,7 @@ body.modal-open {
   color: rgba(255, 255, 255, 0.85);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .experiences-grid {
     grid-template-columns: 1fr;
   }
