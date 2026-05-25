@@ -30,3 +30,20 @@ if (navToggle && primaryNav) {
     if (event.matches) setMenu(false);
   });
 }
+
+// La navigation n'apparaît qu'une fois la section accueil dépassée
+const siteHeader = document.querySelector(".site-header");
+const heroSection = document.querySelector("#accueil");
+
+if (siteHeader && heroSection && "IntersectionObserver" in window) {
+  const heroObserver = new IntersectionObserver(
+    ([entry]) => {
+      siteHeader.classList.toggle("is-visible", !entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
+  heroObserver.observe(heroSection);
+} else if (siteHeader) {
+  // Repli (navigateur sans IntersectionObserver) : nav toujours visible
+  siteHeader.classList.add("is-visible");
+}

@@ -131,16 +131,28 @@ p {
   background-color: var(--sage);
   color: var(--cream-light);
   padding: 0.9rem 1.8rem;
+  border: 1.5px solid transparent;
   border-radius: var(--radius);
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover,
 .btn:focus-visible {
   background-color: var(--sage-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: currentColor;
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background-color: var(--cream-light);
+  color: var(--ink);
 }
 
 :focus-visible {
@@ -157,6 +169,15 @@ p {
   inset: 0 0 auto 0;
   z-index: 1000;
   background-color: rgba(242, 238, 230, 0.8); /* crème dark, opacité 80 % */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Affichée uniquement une fois l'accueil dépassé (bascule via main.js) */
+.site-header.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Flou « verre dépoli » réservé au desktop : sur mobile, un ancêtre avec
@@ -297,7 +318,7 @@ section[id] {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: calc(var(--nav-height) + var(--space-lg)) var(--space-md) var(--space-xl);
+  padding: var(--space-xl) var(--space-md);
   color: var(--cream-light);
   background-color: var(--ink);
   background-image:
@@ -316,17 +337,19 @@ section[id] {
   gap: var(--space-sm);
 }
 
-.hero h1 {
-  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
-}
-
+/* Le nom/rôle s'affiche au-dessus du titre */
 .hero-subtitle {
+  order: -1;
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(250, 248, 244, 0.92);
+}
+
+.hero h1 {
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero-lede {
@@ -336,8 +359,40 @@ section[id] {
   text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
 }
 
-.hero-cta {
-  margin-top: var(--space-md);
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  width: 100%;
+}
+
+.hero-actions .btn {
+  width: 100%;
+  max-width: 22rem;
+}
+
+/* Desktop : tout aligné à gauche, CTA côte à côte */
+@media (min-width: 951px) {
+  .hero {
+    justify-content: flex-start;
+    text-align: left;
+    padding-inline: clamp(var(--space-md), 7vw, 7rem);
+  }
+
+  .hero-content {
+    align-items: flex-start;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
 }
 
 .section-stub {
@@ -360,4 +415,22 @@ main > section:nth-child(even) {
   text-transform: uppercase;
   color: var(--ink-soft);
   margin-top: var(--space-sm);
+}
+
+/* ==========================================================================
+   Petits écrans — titres et textes réduits
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  :root {
+    --fs-h1: clamp(1.875rem, 8vw, 2.5rem);
+    --fs-h2: clamp(1.5rem, 6vw, 2rem);
+    --fs-h3: 1.3rem;
+    --fs-lede: 1.05rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
 }
