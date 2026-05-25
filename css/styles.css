@@ -419,6 +419,14 @@ section[id] {
   user-select: none;
 }
 
+/* Filigrane de la section Visites : en bas à droite */
+.tours .section-kanji {
+  top: auto;
+  left: auto;
+  right: 0.05em;
+  bottom: 0;
+}
+
 .about-grid {
   position: relative;
   z-index: 1;
