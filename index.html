@@ -27,6 +27,13 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3 1.8"></path></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z"></path><circle cx="12" cy="10.5" r="2.4"></circle></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 5.4a3 3 0 0 1 0 5.6"></path><path d="M17.5 14.6c2 .5 3.5 2.2 3.5 4.4"></path></symbol>
+    <symbol id="icon-message" viewBox="0 0 24 24"><path d="M20 4H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3v3l4-3h9a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"></path></symbol>
+  </svg>
+
   <header class="site-header">
     <div class="nav-bar">
       <a href="#accueil" class="brand">Camille Lesage</a>
@@ -69,7 +76,7 @@
     </section>
 
     <section id="apropos" class="about">
-      <span class="about-kanji" aria-hidden="true">紹介</span>
+      <span class="section-kanji" aria-hidden="true">紹介</span>
       <div class="container about-grid">
         <div class="about-media">
           <div class="video-embed video-embed--portrait">
@@ -101,11 +108,202 @@
       </div>
     </section>
 
-    <section id="visites" class="section-stub">
+    <section id="visites" class="tours">
+      <span class="section-kanji" aria-hidden="true">観光する</span>
       <div class="container">
-        <h2>Visites guidées</h2>
-        <span class="stub-tag">Section sur les visites — à venir</span>
+        <div class="section-header">
+          <span class="tag">Visites guidées</span>
+          <h2>Mes quatre visites signature</h2>
+          <p class="section-lede">Explorons ensemble le Japon ! Chacun de ces tours peut être adapté à vos envies. N'hésitez pas à me contacter pour plus de détails.</p>
+        </div>
+
+        <div class="tours-gallery">
+          <button type="button" class="tour-card" data-tour-open="tour-shibuya" aria-haspopup="dialog">
+            <span class="tour-card__kanji" aria-hidden="true">渋谷区</span>
+            <span class="tour-card__content">
+              <span class="tour-card__title">De Shibuya à Asakusa, entre tradition et modernité…</span>
+              <span class="tour-card__places">Shibuya · Akihabara · Asakusa</span>
+              <span class="tour-card__meta"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 heures</span>
+            </span>
+          </button>
+
+          <button type="button" class="tour-card" data-tour-open="tour-shogun" aria-haspopup="dialog">
+            <span class="tour-card__kanji" aria-hidden="true">将軍</span>
+            <span class="tour-card__content">
+              <span class="tour-card__title">Dans les pas du Shogun…</span>
+              <span class="tour-card__places">Palais Impérial · Tsukiji · Ueno</span>
+              <span class="tour-card__meta"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 heures</span>
+            </span>
+          </button>
+
+          <button type="button" class="tour-card" data-tour-open="tour-vieux-tokyo" aria-haspopup="dialog">
+            <span class="tour-card__kanji" aria-hidden="true">東京</span>
+            <span class="tour-card__content">
+              <span class="tour-card__title">À la rencontre du vieux Tokyo…</span>
+              <span class="tour-card__places">Iriya · Ueno · Yanaka · Negishi</span>
+              <span class="tour-card__meta"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 heures</span>
+            </span>
+          </button>
+
+          <button type="button" class="tour-card" data-tour-open="tour-shinjuku" aria-haspopup="dialog">
+            <span class="tour-card__kanji" aria-hidden="true">新宿区</span>
+            <span class="tour-card__content">
+              <span class="tour-card__title">Sous les néons de Shinjuku…</span>
+              <span class="tour-card__places">Shinjuku</span>
+              <span class="tour-card__meta"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 4 à 6 heures</span>
+            </span>
+          </button>
+        </div>
       </div>
+
+      <dialog id="tour-shibuya" class="tour-modal" aria-labelledby="tour-shibuya-title">
+        <button type="button" class="tour-modal__close" data-tour-close aria-label="Fermer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <div class="tour-modal__scroll">
+          <div class="tour-modal__cover">
+            <span class="tour-modal__kanji" aria-hidden="true">渋谷区</span>
+            <h3 id="tour-shibuya-title" class="tour-modal__title">De Shibuya à Asakusa, entre tradition et modernité…</h3>
+          </div>
+          <div class="tour-modal__body">
+            <ul class="tour-facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 heures</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg> Shibuya · Akihabara · Asakusa</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-people"></use></svg> Jusqu'à 8 personnes</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-message"></use></svg> En français</li>
+            </ul>
+            <p class="tour-desc">Commençons par une balade paisible au sanctuaire Meiji-Jingû, entre rituels, histoire et shintoïsme. Puis cap sur Harajuku, à la rencontre de la jeunesse tokyoïte rebelle ! Petite pause shopping à Omotesando, « les Champs-Élysées de Tokyo » (je vous montrerai mes shops préférés). Direction Akihabara, le paradis des Otaku, avant de découvrir le Japon d'Edo et le bouddhisme au Senso-ji d'Asakusa.</p>
+            <h4 class="tour-subhead">Programme indicatif</h4>
+            <ol class="timeline">
+              <li class="timeline__step"><h5>Point de rencontre</h5><p>Devant votre hébergement ou devant le Meiji Jingu Ichino Torii, 1 Chome-18-20 Jingumae, Shibuya, Tokyo 150-0001.</p></li>
+              <li class="timeline__step"><h5>Meiji-Jingû &amp; Harajuku</h5><p>Une promenade paisible à travers le célèbre sanctuaire du Meiji-Jingû, le plus grand du Japon ! Entre histoire, anecdotes et rituels, appréhendez le shintoïsme. Laissez-vous ensuite électriser par le quartier underground de Harajuku, où se confrontent tous les looks de la jeunesse tokyoïte.</p></li>
+              <li class="timeline__step"><h5>Omotesando</h5><p>Pause shopping le long de l'avenue Omotesando, surnommée « les Champs-Élysées de Tokyo » : chaque bâtiment est un bijou d'architecture. Je vous emmènerai dans mes shops préférés…</p></li>
+              <li class="timeline__step"><h5>Akihabara</h5><p>Bienvenue au paradis de tous les Otaku ! Anecdotes historiques, boutiques d'électronique, de figurines et de goodies, jeux d'arcade et histoire des maids cafés.</p></li>
+              <li class="timeline__step"><h5>Asakusa &amp; Senso-ji</h5><p>Le Japon d'Edo et le bouddhisme au célèbre Senso-ji, puis la rue Kappabashi, l'Eldorado de la cuisine japonaise.</p></li>
+              <li class="timeline__step"><h5>Point d'arrivée</h5><p>Notre promenade prend fin aux alentours d'Asakusa. J'espère que cela vous aura donné encore plus envie de parcourir le pays de long en large ! Sayonara…</p></li>
+            </ol>
+            <h4 class="tour-subhead">Options disponibles</h4>
+            <ul class="tour-options">
+              <li>Point de vue panoramique à Shibuya</li>
+              <li>Games à Akihabara</li>
+              <li>Dégustation de sake</li>
+              <li>Sento (bain public)</li>
+            </ul>
+            <a href="#contact" class="btn" data-tour-reserve>Réserver cette visite</a>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="tour-shogun" class="tour-modal" aria-labelledby="tour-shogun-title">
+        <button type="button" class="tour-modal__close" data-tour-close aria-label="Fermer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <div class="tour-modal__scroll">
+          <div class="tour-modal__cover">
+            <span class="tour-modal__kanji" aria-hidden="true">将軍</span>
+            <h3 id="tour-shogun-title" class="tour-modal__title">Dans les pas du Shogun…</h3>
+          </div>
+          <div class="tour-modal__body">
+            <ul class="tour-facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 heures</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg> Palais Impérial · Tsukiji · Ueno</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-people"></use></svg> Jusqu'à 8 personnes</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-message"></use></svg> En français</li>
+            </ul>
+            <p class="tour-desc">Prêts pour un challenge ? En un jour, retraçons l'âge d'or et le déclin du shogunat. Au commencement, Tokyo n'était pas encore Tokyo… Un retour aux origines de cette capitale dont la grandeur est intimement liée à un homme dont l'ambition et le charisme feront ombrage à l'empereur du Japon lui-même : Tokugawa Ieyasu, troisième unificateur du Japon et fondateur d'Edo.</p>
+            <h4 class="tour-subhead">Programme indicatif</h4>
+            <ol class="timeline">
+              <li class="timeline__step"><h5>Point de rencontre</h5><p>Devant votre hébergement ou devant Ōte-mon Gate, 1-1 Chiyoda, Chiyoda City, Tokyo 100-0001.</p></li>
+              <li class="timeline__step"><h5>Origines d'Edo</h5><p>Un retour aux origines de cette capitale, liée à un homme dont l'ambition fera ombrage à l'Empereur du Japon.</p></li>
+              <li class="timeline__step"><h5>Palais Impérial &amp; jardins</h5><p>Tokugawa Ieyasu, fondateur d'Edo, a bâti ici l'un des châteaux les plus puissants du monde.</p></li>
+              <li class="timeline__step"><h5>Tsukiji</h5><p>L'ancien marché aux poissons devenu un lieu de gastronomie incontournable.</p></li>
+              <li class="timeline__step"><h5>Ueno</h5><p>Le quartier culturel de Tokyo : musées nationaux et célèbre parc.</p></li>
+              <li class="timeline__step"><h5>Point d'arrivée</h5><p>Notre promenade prend fin à Ueno. J'espère que cela vous aura donné encore plus envie de parcourir le pays de long en large ! Sayonara…</p></li>
+            </ol>
+            <h4 class="tour-subhead">Options disponibles</h4>
+            <ul class="tour-options">
+              <li>Games à Akihabara</li>
+              <li>Dégustation de matcha</li>
+              <li>Dégustation de sake</li>
+              <li>Sento (bain public)</li>
+            </ul>
+            <a href="#contact" class="btn" data-tour-reserve>Réserver cette visite</a>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="tour-vieux-tokyo" class="tour-modal" aria-labelledby="tour-vieux-tokyo-title">
+        <button type="button" class="tour-modal__close" data-tour-close aria-label="Fermer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <div class="tour-modal__scroll">
+          <div class="tour-modal__cover">
+            <span class="tour-modal__kanji" aria-hidden="true">東京</span>
+            <h3 id="tour-vieux-tokyo-title" class="tour-modal__title">À la rencontre du vieux Tokyo…</h3>
+          </div>
+          <div class="tour-modal__body">
+            <ul class="tour-facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 heures</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg> Iriya · Ueno · Yanaka · Negishi</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-people"></use></svg> Jusqu'à 8 personnes</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-message"></use></svg> En français</li>
+            </ul>
+            <p class="tour-desc">Ruelles sinueuses, temples à l'enfilade, échoppes si étroites que deux personnes peuvent à peine s'y glisser… Partons à la découverte du Tokyo populaire et de son artisanat traditionnel, loin de l'agitation des grands quartiers.</p>
+            <h4 class="tour-subhead">Programme indicatif</h4>
+            <ol class="timeline">
+              <li class="timeline__step"><h5>Point de rencontre</h5><p>Devant votre hébergement ou devant la gare d'Iriya.</p></li>
+              <li class="timeline__step"><h5>Iriya &amp; le marché aux fleurs</h5><p>La porte d'entrée du vieux Tokyo, entre étals colorés et odeurs d'encens.</p></li>
+              <li class="timeline__step"><h5>Yanaka</h5><p>Quartier préservé des bombardements : rues intactes et boutiques d'artisans.</p></li>
+              <li class="timeline__step"><h5>Artisans du Shitamachi</h5><p>Le Tokyo populaire et traditionnel. Potiers, fabricants de Washi et de fûrin.</p></li>
+              <li class="timeline__step"><h5>Negishi</h5><p>Un quartier méconnu aux airs de campagne. Temples et jardins secrets.</p></li>
+              <li class="timeline__step"><h5>Point d'arrivée</h5><p>Notre promenade prend fin à Negishi. J'espère que cela vous aura donné encore plus envie de parcourir le pays de long en large ! Sayonara…</p></li>
+            </ol>
+            <h4 class="tour-subhead">Options disponibles</h4>
+            <ul class="tour-options">
+              <li>Peinture de Fûrin avec un artisan</li>
+              <li>Dégustation de matcha</li>
+              <li>Dégustation de sake</li>
+              <li>Sento (bain public)</li>
+            </ul>
+            <a href="#contact" class="btn" data-tour-reserve>Réserver cette visite</a>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="tour-shinjuku" class="tour-modal" aria-labelledby="tour-shinjuku-title">
+        <button type="button" class="tour-modal__close" data-tour-close aria-label="Fermer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <div class="tour-modal__scroll">
+          <div class="tour-modal__cover">
+            <span class="tour-modal__kanji" aria-hidden="true">新宿区</span>
+            <h3 id="tour-shinjuku-title" class="tour-modal__title">Sous les néons de Shinjuku…</h3>
+          </div>
+          <div class="tour-modal__body">
+            <ul class="tour-facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 4 à 6 heures</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg> Shinjuku</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-people"></use></svg> Jusqu'à 8 personnes</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-message"></use></svg> En français</li>
+            </ul>
+            <p class="tour-desc">Il y a le Shinjuku de nuit, où se pressent les salaryman cherchant la décompression après le travail et la jeunesse tokyoïte en pleine frénésie. Profitons de la soirée ensemble pour découvrir la cuisine et l'ambiance locale.</p>
+            <h4 class="tour-subhead">Programme indicatif</h4>
+            <ol class="timeline">
+              <li class="timeline__step"><h5>Point de rencontre</h5><p>Devant votre hébergement ou au pied de l'arche Kabukicho Ichibangai.</p></li>
+              <li class="timeline__step"><h5>Kabukichô — le quartier des Yakuza</h5><p>Cuisine et ambiance locale au cœur du repère historique des Yakuza. Restez sur vos gardes…</p></li>
+              <li class="timeline__step"><h5>Golden Gai</h5><p>Labyrinthe de minuscules bars thématiques des années 50. Hors du temps.</p></li>
+              <li class="timeline__step"><h5>Omoide Yokochô</h5><p>Yakitori fumants et lanternes rouges : l'ambiance la plus authentique de Shinjuku.</p></li>
+              <li class="timeline__step"><h5>Point d'arrivée</h5><p>Notre promenade prend fin à Shinjuku. J'espère que cela vous aura donné encore plus envie de parcourir le pays de long en large ! Sayonara…</p></li>
+            </ol>
+            <h4 class="tour-subhead">Options disponibles</h4>
+            <ul class="tour-options">
+              <li>Jeux d'arcade (Games)</li>
+              <li>Dégustation de sake</li>
+            </ul>
+            <a href="#contact" class="btn" data-tour-reserve>Réserver cette visite</a>
+          </div>
+        </div>
+      </dialog>
     </section>
 
     <section id="experiences" class="section-stub">

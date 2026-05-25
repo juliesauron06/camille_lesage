@@ -67,3 +67,45 @@ if (aboutToggle && aboutMore) {
     }
   });
 }
+
+// Pop-ups des visites guidées
+document.querySelectorAll("[data-tour-open]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const dialog = document.getElementById(btn.dataset.tourOpen);
+    if (dialog && typeof dialog.showModal === "function") {
+      dialog.showModal();
+      document.body.classList.add("modal-open");
+    }
+  });
+});
+
+document.querySelectorAll(".tour-modal").forEach((dialog) => {
+  dialog.querySelectorAll("[data-tour-close]").forEach((btn) => {
+    btn.addEventListener("click", () => dialog.close());
+  });
+
+  // Fermer en cliquant sur le fond
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  // Nettoyage à la fermeture (croix, fond ou touche Échap)
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("modal-open");
+  });
+});
+
+// CTA « Réserver » : fermer la pop-up puis défiler vers le formulaire de contact
+document.querySelectorAll("[data-tour-reserve]").forEach((cta) => {
+  cta.addEventListener("click", (event) => {
+    event.preventDefault();
+    const dialog = cta.closest(".tour-modal");
+    if (dialog) dialog.close();
+    const contact = document.querySelector("#contact");
+    if (contact) {
+      window.requestAnimationFrame(() => {
+        contact.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  });
+});
