@@ -289,22 +289,55 @@ section[id] {
    Placeholders temporaires (remplacés au fil des étapes suivantes)
    ========================================================================== */
 
-.hero-stub {
+/* Accueil immersif */
+.hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: var(--space-md);
-  padding: calc(var(--nav-height) + var(--space-md)) var(--space-md) var(--space-md);
-  background-color: var(--cream-dark);
+  padding: calc(var(--nav-height) + var(--space-lg)) var(--space-md) var(--space-xl);
+  color: var(--cream-light);
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(rgba(26, 26, 24, 0.35), rgba(26, 26, 24, 0.55)),
+    url("../assets/images/hero-japan.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.hero-stub .lede {
+.hero-content {
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hero h1 {
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.92);
+}
+
+.hero-lede {
   font-size: var(--fs-lede);
-  max-width: 46ch;
-  color: var(--ink-soft);
+  max-width: 54ch;
+  color: rgba(250, 248, 244, 0.92);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+}
+
+.hero-cta {
+  margin-top: var(--space-md);
 }
 
 .section-stub {
