@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/reviews.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -32,6 +33,7 @@
     <symbol id="icon-map" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z"></path><circle cx="12" cy="10.5" r="2.4"></circle></symbol>
     <symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 5.4a3 3 0 0 1 0 5.6"></path><path d="M17.5 14.6c2 .5 3.5 2.2 3.5 4.4"></path></symbol>
     <symbol id="icon-message" viewBox="0 0 24 24"><path d="M20 4H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3v3l4-3h9a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"></path></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"></path></symbol>
   </svg>
 
   <header class="site-header">
@@ -430,10 +432,16 @@
       </div>
     </section>
 
-    <section id="avis" class="section-stub">
+    <section id="avis" class="reviews">
       <div class="container">
-        <h2>Retours clients</h2>
-        <span class="stub-tag">Section avis — à venir</span>
+        <div class="section-header">
+          <span class="tag">Avis clients</span>
+          <h2>Ils ont voyagé avec moi…</h2>
+          <p class="section-lede">Quelques mots de voyageurs qui ont exploré le Japon à mes côtés.</p>
+        </div>
+        <div class="reviews-grid" data-reviews>
+          <p class="reviews-empty">Les avis seront bientôt disponibles…</p>
+        </div>
       </div>
     </section>
 
