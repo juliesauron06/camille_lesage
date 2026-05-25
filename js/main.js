@@ -53,10 +53,17 @@ const aboutToggle = document.querySelector(".link-toggle");
 const aboutMore = document.querySelector("#about-more");
 
 if (aboutToggle && aboutMore) {
+  const aboutSection = document.querySelector("#apropos");
+
   aboutToggle.addEventListener("click", () => {
     const expanded = aboutToggle.getAttribute("aria-expanded") === "true";
     aboutToggle.setAttribute("aria-expanded", String(!expanded));
     aboutMore.hidden = expanded;
     aboutToggle.textContent = expanded ? "Voir plus" : "Voir moins";
+
+    // Au repli (« Voir moins »), revenir au début de la section
+    if (expanded && aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 }
