@@ -153,6 +153,14 @@ if (reviewsGrid && typeof REVIEWS !== "undefined" && Array.isArray(REVIEWS)) {
     quote.appendChild(paragraph);
     card.appendChild(quote);
 
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "link-toggle review-card__toggle";
+    toggle.hidden = true;
+    toggle.textContent = "Voir plus";
+    toggle.setAttribute("aria-expanded", "false");
+    card.appendChild(toggle);
+
     const caption = document.createElement("figcaption");
     caption.className = "review-card__author";
     const name = document.createElement("span");
@@ -180,5 +188,46 @@ if (reviewsGrid && typeof REVIEWS !== "undefined" && Array.isArray(REVIEWS)) {
     const fragment = document.createDocumentFragment();
     topReviews.forEach((review) => fragment.appendChild(buildCard(review)));
     reviewsGrid.replaceChildren(fragment);
+
+    const cards = Array.from(reviewsGrid.querySelectorAll(".review-card"));
+    const reviewsSection = document.querySelector("#avis");
+
+    // Le bouton « Voir plus » n'apparaît que si le texte dépasse les 6 lignes affichées
+    const refreshToggle = (card) => {
+      if (card.classList.contains("is-expanded")) return;
+      const paragraph = card.querySelector(".review-card__text p");
+      const toggle = card.querySelector(".review-card__toggle");
+      if (!paragraph || !toggle) return;
+      toggle.hidden = paragraph.scrollHeight <= paragraph.clientHeight + 1;
+    };
+
+    cards.forEach((card) => {
+      const toggle = card.querySelector(".review-card__toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", () => {
+        const expanded = card.classList.toggle("is-expanded");
+        toggle.setAttribute("aria-expanded", String(expanded));
+        toggle.textContent = expanded ? "Voir moins" : "Voir plus";
+        // Au repli (« Voir moins »), revenir au début de la section Avis
+        if (!expanded && reviewsSection) {
+          reviewsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    const refreshAll = () => cards.forEach(refreshToggle);
+    refreshAll();
+
+    // Re-mesure une fois les polices chargées (la hauteur de ligne peut varier)
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(refreshAll);
+    }
+
+    // Re-mesure au redimensionnement (la largeur des cartes change le nombre de lignes)
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(refreshAll, 150);
+    });
   }
 }

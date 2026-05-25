@@ -1123,6 +1123,22 @@ body.modal-open {
   color: rgba(26, 26, 24, 0.85);
 }
 
+.review-card__text p {
+  margin: 0;
+}
+
+.review-card:not(.is-expanded) .review-card__text p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+
+.review-card__toggle {
+  margin-top: 0;
+}
+
 .review-card__author {
   display: flex;
   flex-direction: column;

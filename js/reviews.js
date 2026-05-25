@@ -37,13 +37,13 @@ const REVIEWS = [
   {
     name: "Joël F.",
     rating: 5,
-    date: "2025-04",
+    date: "2026-04",
     text: "Guide passionnée, enthousiaste qui a réussi à partager son amour de tokyo et du Japon. Attendez-vous à découvrir des lieux méconnus et à beaucoup marcher !!! Génial ! Toute la famille a adoré la visite avec Camille !",
   },
   {
     name: "Pauline L.",
     rating: 5,
-    date: "2025-04",
+    date: "2026-04",
     text: "Nous avons été enchantés d'avoir pu profiter de l'expérience et des connaissances de Camille lors de notre passage à Tokyo. Elle nous a fait découvrir des lieux emblématiques tout comme des pépites cachées, en restant très à l'écoute et en s'adaptant à notre programme. Nous avons aussi beaucoup apprécié ses conseils (les illuminations à Kyoto, matsuri à Tokyo) et sa réactivité lors de nos échanges. Dynamique et pétillante, Camille est passionnée par le Japon et est une mine d'informations sur son histoire et ses coutumes. Nous recommandons chaudement !",
   },
   {
