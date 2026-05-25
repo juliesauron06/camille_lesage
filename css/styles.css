@@ -419,6 +419,11 @@ section[id] {
   user-select: none;
 }
 
+.section-kanji--right {
+  left: auto;
+  right: 0.05em;
+}
+
 .about-grid {
   position: relative;
   z-index: 1;
@@ -1159,10 +1164,14 @@ body.modal-open {
    ========================================================================== */
 
 .contact {
+  position: relative;
+  overflow: hidden;
   padding-block: var(--space-xl);
 }
 
 .contact-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-lg);
@@ -1257,8 +1266,9 @@ body.modal-open {
 }
 
 .contact-form__submit {
-  align-self: flex-start;
+  align-self: auto;
   margin-top: var(--space-xs);
+  text-align: center;
 }
 
 .form-status {
