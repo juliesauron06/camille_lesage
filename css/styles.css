@@ -664,7 +664,7 @@ main > section:nth-child(even) {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1;
-  opacity: 0.06;
+  opacity: 0.2;
 }
 
 .tour-card__content {
@@ -767,7 +767,7 @@ main > section:nth-child(even) {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1;
-  opacity: 0.06;
+  opacity: 0.2;
 }
 
 .tour-modal__title {
