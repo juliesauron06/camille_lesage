@@ -414,7 +414,7 @@ section[id] {
   font-size: clamp(6rem, 18vw, 15rem);
   line-height: 0.9;
   color: var(--sage);
-  opacity: 0.2;
+  opacity: 0.1;
   pointer-events: none;
   user-select: none;
 }
@@ -530,17 +530,10 @@ section[id] {
   border: 0;
 }
 
-.video-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: var(--space-md);
-  background-image: linear-gradient(135deg, #211412, #15100e);
-  color: rgba(250, 248, 244, 0.65);
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.video-embed--portrait {
+  --video-aspect: 9 / 16;
+  max-width: 340px;
+  margin-inline: auto;
 }
 
 .section-stub {
