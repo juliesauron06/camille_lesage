@@ -1018,48 +1018,51 @@ body.modal-open {
 .experiences-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .exp-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 10px 30px rgba(26, 26, 24, 0.07);
-}
-
-.exp-card__cover {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 4 / 3;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: clamp(300px, 26vw, 360px);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  overflow: hidden;
   color: var(--cream-light);
   background-image:
-    linear-gradient(135deg, rgba(20, 15, 13, 0.2), rgba(20, 15, 13, 0.4)),
+    linear-gradient(to top, rgba(20, 15, 13, 0.9) 0%, rgba(20, 15, 13, 0.5) 42%, rgba(20, 15, 13, 0.08) 100%),
     var(--cover, linear-gradient(135deg, #3a1c18, #14100e));
   background-size: cover;
   background-position: center;
+  box-shadow: 0 10px 30px rgba(26, 26, 24, 0.12);
 }
 
 .exp-card__kanji {
-  font-size: clamp(3rem, 8vw, 4.5rem);
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
   line-height: 1;
-  opacity: 0.55;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .exp-card__body {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  padding: var(--space-md);
+  gap: 0.5rem;
+}
+
+.exp-card__body h3 {
+  color: var(--cream-light);
 }
 
 .exp-card__body p {
-  color: rgba(26, 26, 24, 0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 768px) {
