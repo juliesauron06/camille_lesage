@@ -950,12 +950,10 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
   margin: 0;
   padding: var(--space-sm);
   border-radius: var(--radius);
   overflow: hidden;
-  text-align: center;
   color: var(--cream-light);
   background-image:
     linear-gradient(to top, rgba(20, 15, 13, 0.9) 0%, rgba(20, 15, 13, 0.2) 65%, rgba(20, 15, 13, 0.4) 100%),
@@ -979,7 +977,6 @@ body.modal-open {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.3rem;
 }
 
@@ -993,18 +990,4 @@ body.modal-open {
 .dest-card__theme {
   font-size: 0.9rem;
   opacity: 0.9;
-}
-
-.dest-card__meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.2rem;
-  font-size: 0.82rem;
-  opacity: 0.8;
-}
-
-.dest-card__meta .icon {
-  width: 1em;
-  height: 1em;
 }
