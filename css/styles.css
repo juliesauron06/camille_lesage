@@ -111,10 +111,6 @@ h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
 h3 { font-size: var(--fs-h3); }
 
-h2:not(.hero-subtitle) {
-  color: var(--sage);
-}
-
 p {
   text-wrap: pretty;
 }
@@ -691,12 +687,25 @@ main > section:nth-child(even) {
   opacity: 0.9;
 }
 
-.tour-card__meta {
+.tour-card__cta {
+  align-self: flex-start;
+  margin-top: 0.4rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background-color: var(--sage);
+  color: var(--cream-light);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease;
+}
+
+.tour-card:hover .tour-card__cta,
+.tour-card:focus-visible .tour-card__cta {
+  background-color: var(--sage-hover);
 }
 
 @media (max-width: 768px) {
