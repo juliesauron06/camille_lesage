@@ -149,10 +149,124 @@ p {
 }
 
 /* ==========================================================================
-   Page temporaire — validation des fondations (sera remplacée à l'étape 2)
+   En-tête & navigation
    ========================================================================== */
 
-.intro {
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  background-color: rgba(242, 238, 230, 0.8); /* crème dark, opacité 80 % */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+.brand {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list a:not(.nav-cta) {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:not(.nav-cta):hover,
+.nav-list a:not(.nav-cta):focus-visible {
+  color: var(--sage);
+}
+
+.nav-cta {
+  text-transform: none;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.95rem;
+}
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  z-index: 2;
+  color: var(--ink);
+  padding: 0.25rem;
+}
+
+.nav-toggle .icon-close { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-menu { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(242, 238, 230, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--space-lg);
+    font-size: 1.5rem;
+  }
+
+  .nav-cta {
+    font-size: 1.35rem;
+    padding: 0.7rem 1.6rem;
+  }
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Sections — offset pour l'en-tête fixe
+   ========================================================================== */
+
+section[id] {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* ==========================================================================
+   Placeholders temporaires (remplacés au fil des étapes suivantes)
+   ========================================================================== */
+
+.hero-stub {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -160,61 +274,34 @@ p {
   justify-content: center;
   text-align: center;
   gap: var(--space-md);
+  padding: calc(var(--nav-height) + var(--space-md)) var(--space-md) var(--space-md);
+  background-color: var(--cream-dark);
+}
+
+.hero-stub .lede {
+  font-size: var(--fs-lede);
+  max-width: 46ch;
+  color: var(--ink-soft);
+}
+
+.section-stub {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: var(--space-xl) var(--space-md);
 }
 
-.intro .flag {
-  font-size: 3rem;
+main > section:nth-child(even) {
+  background-color: var(--cream-dark);
 }
 
-.intro .lede {
-  font-size: var(--fs-lede);
-  max-width: 38ch;
-  color: var(--ink-soft);
-}
-
-.tokens {
-  margin-top: var(--space-xl);
-  width: 100%;
-  max-width: var(--max-width);
-}
-
-.tokens .caption {
-  font-size: 0.85rem;
+.stub-tag {
+  display: inline-block;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-bottom: var(--space-md);
-}
-
-.swatches {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: var(--space-sm);
-}
-
-.swatch {
-  border-radius: var(--radius);
-  border: 1px solid var(--cream-dark);
-  overflow: hidden;
-  text-align: left;
-  background: #fff;
-}
-
-.swatch .chip {
-  height: 90px;
-}
-
-.swatch .meta {
-  padding: 0.75rem 1rem;
-}
-
-.swatch .meta strong {
-  display: block;
-  font-size: 0.9rem;
-}
-
-.swatch .meta code {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
+  margin-top: var(--space-sm);
 }

@@ -24,33 +24,77 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <main class="intro">
-    <span class="flag" aria-hidden="true">🇯🇵</span>
-    <h1>À la rencontre du Japon</h1>
-    <p class="lede">Plongez au cœur de l'histoire et de la culture nippone, dans ce fascinant pays du Soleil levant.</p>
-    <a class="btn" href="#">Entrer au Japon</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="#apropos" class="brand">Camille Lesage</a>
 
-    <section class="tokens" aria-label="Fondations visuelles">
-      <p class="caption">Page temporaire — validation des fondations</p>
-      <div class="swatches">
-        <div class="swatch">
-          <div class="chip" style="background: var(--cream-light);"></div>
-          <div class="meta"><strong>Crème light</strong><code>#FAF8F4</code></div>
-        </div>
-        <div class="swatch">
-          <div class="chip" style="background: var(--cream-dark);"></div>
-          <div class="meta"><strong>Crème dark</strong><code>#F2EEE6</code></div>
-        </div>
-        <div class="swatch">
-          <div class="chip" style="background: var(--sage);"></div>
-          <div class="meta"><strong>Sage</strong><code>#6b1414</code></div>
-        </div>
-        <div class="swatch">
-          <div class="chip" style="background: var(--ink);"></div>
-          <div class="meta"><strong>Ink</strong><code>#1A1A18</code></div>
-        </div>
+      <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon icon-menu" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="icon icon-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19"></line>
+          <line x1="19" y1="5" x2="5" y2="19"></line>
+        </svg>
+      </button>
+
+      <nav id="primary-nav" class="nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#visites">Visites guidées</a></li>
+          <li><a href="#experiences">Expériences culturelles</a></li>
+          <li><a href="#avis">Retours clients</a></li>
+          <li><a href="#contact" class="btn nav-cta">Me contacter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero-stub">
+      <h1>À la rencontre du Japon, ce pays de tous les paradoxes…</h1>
+      <p class="lede">Plongez au cœur de l'histoire et de la culture nippone, dans ce fascinant pays du Soleil levant.</p>
+      <a href="#contact" class="btn">Entrer au Japon</a>
+      <span class="stub-tag">Aperçu — section accueil construite à l'étape 2</span>
+    </section>
+
+    <section id="apropos" class="section-stub">
+      <div class="container">
+        <h2>À propos</h2>
+        <span class="stub-tag">Section de présentation — à venir</span>
+      </div>
+    </section>
+
+    <section id="visites" class="section-stub">
+      <div class="container">
+        <h2>Visites guidées</h2>
+        <span class="stub-tag">Section sur les visites — à venir</span>
+      </div>
+    </section>
+
+    <section id="experiences" class="section-stub">
+      <div class="container">
+        <h2>Expériences culturelles</h2>
+        <span class="stub-tag">Section sur les expériences — à venir</span>
+      </div>
+    </section>
+
+    <section id="avis" class="section-stub">
+      <div class="container">
+        <h2>Retours clients</h2>
+        <span class="stub-tag">Section avis — à venir</span>
+      </div>
+    </section>
+
+    <section id="contact" class="section-stub">
+      <div class="container">
+        <h2>Me contacter</h2>
+        <span class="stub-tag">Section contact — à venir</span>
       </div>
     </section>
   </main>
