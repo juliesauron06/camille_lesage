@@ -1173,6 +1173,30 @@ body.modal-open {
   margin-bottom: 0;
 }
 
+.contact-grid .section-header p {
+  margin-top: var(--space-sm);
+}
+
+.contact-email a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sage);
+  font-weight: 600;
+}
+
+.contact-email a:hover,
+.contact-email a:focus-visible {
+  color: var(--sage-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-email .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
