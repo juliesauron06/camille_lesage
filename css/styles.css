@@ -899,7 +899,14 @@ body.modal-open {
    ========================================================================== */
 
 .beyond {
+  position: relative;
+  overflow: hidden;
   padding-block: var(--space-xl);
+}
+
+.beyond > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .beyond-gallery {
