@@ -165,7 +165,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   height: var(--nav-height);
+  padding-inline: var(--space-md);
 }
 
 .brand {
@@ -180,9 +182,13 @@ p {
 .nav-list {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 1.5rem;
   list-style: none;
   padding: 0;
+}
+
+.nav-list a {
+  white-space: nowrap;
 }
 
 .nav-list a:not(.nav-cta) {
@@ -197,8 +203,8 @@ p {
 
 .nav-cta {
   text-transform: none;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.95rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
 }
 
 .nav-toggle {
@@ -213,7 +219,7 @@ p {
 .nav-toggle[aria-expanded="true"] .icon-menu { display: none; }
 .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -225,9 +231,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(242, 238, 230, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    overflow-y: auto;
+    padding: calc(var(--nav-height) + var(--space-lg)) var(--space-md) var(--space-xl);
+    background-color: rgba(242, 238, 230, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease;
@@ -240,8 +248,10 @@ p {
 
   .nav-list {
     flex-direction: column;
-    gap: var(--space-lg);
+    align-items: center;
+    gap: var(--space-md);
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .nav-cta {

@@ -26,7 +26,7 @@ if (navToggle && primaryNav) {
   });
 
   // Réinitialiser en repassant sur desktop
-  window.matchMedia("(min-width: 900px)").addEventListener("change", (event) => {
+  window.matchMedia("(min-width: 951px)").addEventListener("change", (event) => {
     if (event.matches) setMenu(false);
   });
 }
