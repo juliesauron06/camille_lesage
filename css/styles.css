@@ -617,7 +617,7 @@ main > section:nth-child(even) {
 
 .section-header {
   max-width: 60ch;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .section-lede {
