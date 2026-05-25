@@ -231,3 +231,52 @@ if (reviewsGrid && typeof REVIEWS !== "undefined" && Array.isArray(REVIEWS)) {
     });
   }
 }
+
+// Formulaire de contact : envoi AJAX vers Netlify + message de confirmation sur place
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  const status = contactForm.querySelector("[data-form-status]");
+  const submitBtn = contactForm.querySelector("[type='submit']");
+
+  const showStatus = (message, type) => {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle("is-success", type === "success");
+    status.classList.toggle("is-error", type === "error");
+    status.hidden = false;
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const initialLabel = submitBtn ? submitBtn.textContent : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi…";
+    }
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(contactForm)).toString(),
+      });
+      if (!response.ok) throw new Error(String(response.status));
+      contactForm.reset();
+      showStatus("Merci ! Votre message a bien été envoyé, je vous répondrai au plus vite.", "success");
+    } catch (error) {
+      showStatus("Oups, l'envoi a échoué. Merci de réessayer dans un instant.", "error");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = initialLabel;
+      }
+    }
+  });
+}
