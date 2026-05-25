@@ -111,6 +111,10 @@ h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
 h3 { font-size: var(--fs-h3); }
 
+h2:not(.hero-subtitle) {
+  color: var(--sage);
+}
+
 p {
   text-wrap: pretty;
 }
@@ -1024,7 +1028,7 @@ body.modal-open {
   overflow: hidden;
   color: var(--cream-light);
   background-image:
-    linear-gradient(to top, rgba(20, 15, 13, 0.9) 0%, rgba(20, 15, 13, 0.5) 42%, rgba(20, 15, 13, 0.08) 100%),
+    linear-gradient(to top, rgba(20, 15, 13, 0.9) 0%, rgba(20, 15, 13, 0.55) 34%, rgba(20, 15, 13, 0) 68%),
     var(--cover, linear-gradient(135deg, #3a1c18, #14100e));
   background-size: cover;
   background-position: center;
@@ -1040,10 +1044,13 @@ body.modal-open {
 
 .exp-card__body h3 {
   color: var(--cream-light);
+  font-size: 1.15rem;
 }
 
 .exp-card__body p {
   color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 960px) {
