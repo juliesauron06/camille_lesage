@@ -157,8 +157,16 @@ p {
   inset: 0 0 auto 0;
   z-index: 1000;
   background-color: rgba(242, 238, 230, 0.8); /* crème dark, opacité 80 % */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Flou « verre dépoli » réservé au desktop : sur mobile, un ancêtre avec
+   backdrop-filter empêcherait le menu plein écran (position: fixed) de se
+   baser sur la fenêtre, ce qui l'empêchait de prendre toute la hauteur. */
+@media (min-width: 951px) {
+  .site-header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 .nav-bar {
@@ -224,6 +232,11 @@ p {
     display: inline-flex;
   }
 
+  /* Menu ouvert : il recouvre tout, on masque la marque (seul le × reste) */
+  body.nav-open .brand {
+    visibility: hidden;
+  }
+
   .nav {
     position: fixed;
     inset: 0;
@@ -232,7 +245,7 @@ p {
     align-items: center;
     justify-content: center;
     overflow-y: auto;
-    padding: calc(var(--nav-height) + var(--space-lg)) var(--space-md) var(--space-xl);
+    padding: var(--space-xl) var(--space-md);
     background-color: rgba(242, 238, 230, 0.97);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
