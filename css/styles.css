@@ -905,7 +905,7 @@ body.modal-open {
 .beyond-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-sm);
+  gap: var(--space-xs);
 }
 
 @media (min-width: 640px) {
