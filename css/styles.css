@@ -771,6 +771,14 @@ main > section:nth-child(even) {
   --cover: url(../assets/images/camille-lesage-a-nara-daim.jpg);
 }
 
+.dest-card--fuji {
+  --cover: url(../assets/images/camille-lesage-mont-fuji.jpg);
+}
+
+.dest-card--miyajima {
+  --cover: url(../assets/images/camille-a-miyajima-torii.jpg);
+}
+
 /* Pop-up de visite */
 .tour-modal {
   position: fixed;
