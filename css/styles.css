@@ -680,7 +680,7 @@ main > section:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.8rem;
+  padding: 0.2rem 1.8rem;
   border: 1.5px solid transparent;
   border-radius: var(--radius);
   background-color: var(--sage);
