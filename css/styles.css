@@ -704,6 +704,12 @@ main > section:nth-child(even) {
   }
 }
 
+/* Photos de couverture des visites (chemins relatifs à ce fichier CSS) */
+[data-tour-open="tour-shibuya"],
+#tour-shibuya .tour-modal__cover {
+  --cover: url(../assets/images/visite-shibuya-asakusa.jpg);
+}
+
 /* Pop-up de visite */
 .tour-modal {
   position: fixed;
