@@ -738,6 +738,23 @@ main > section:nth-child(even) {
   --cover: url(../assets/images/camille-lesage-papier-washi-tokyo.jpg);
 }
 
+/* Photos des destinations (Au-delà de Tokyo) */
+.dest-card--nikko {
+  --cover: url(../assets/images/camille-lesage-a-nikko-pagode.jpg);
+}
+
+.dest-card--yokohama {
+  --cover: url(../assets/images/camille-lesage-a-yokohama.jpg);
+}
+
+.dest-card--kamakura {
+  --cover: url(../assets/images/camille-lesage-a-kamakura.jpg);
+}
+
+.dest-card--enoshima {
+  --cover: url(../assets/images/camille-lesage-a-enoshima.jpg);
+}
+
 /* Pop-up de visite */
 .tour-modal {
   position: fixed;
