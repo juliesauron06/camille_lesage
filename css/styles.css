@@ -755,6 +755,22 @@ main > section:nth-child(even) {
   --cover: url(../assets/images/camille-lesage-a-enoshima.jpg);
 }
 
+.dest-card--hakone {
+  --cover: url(../assets/images/camille-lesage-a-hakone-temple.jpg);
+}
+
+.dest-card--kyoto {
+  --cover: url(../assets/images/camille-lesage-a-kyoto-pagode.jpg);
+}
+
+.dest-card--uji {
+  --cover: url(../assets/images/camille-a-uji-nintendo-musuem.jpg);
+}
+
+.dest-card--nara {
+  --cover: url(../assets/images/camille-lesage-a-nara-daim.jpg);
+}
+
 /* Pop-up de visite */
 .tour-modal {
   position: fixed;
