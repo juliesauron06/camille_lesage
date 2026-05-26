@@ -710,6 +710,34 @@ main > section:nth-child(even) {
   --cover: url(../assets/images/visite-shibuya-asakusa.jpg);
 }
 
+[data-tour-open="tour-shogun"],
+#tour-shogun .tour-modal__cover {
+  --cover: url(../assets/images/temple-a-ueno-tokyo.jpg);
+}
+
+[data-tour-open="tour-vieux-tokyo"],
+#tour-vieux-tokyo .tour-modal__cover {
+  --cover: url(../assets/images/camille-lesage-vieux-tokyo.jpg);
+}
+
+[data-tour-open="tour-shinjuku"],
+#tour-shinjuku .tour-modal__cover {
+  --cover: url(../assets/images/camille-lesage-kabukicho-tower-shinjuku.jpg);
+}
+
+/* Images de fond des ateliers (Expériences) */
+.exp-card--sake {
+  --cover: url(../assets/images/camille-lesage-degustation-de-sake-tokyo.jpg);
+}
+
+.exp-card--furin {
+  --cover: url(../assets/images/camille-lesage-peinture-de-furin-tokyo.jpg);
+}
+
+.exp-card--washi {
+  --cover: url(../assets/images/camille-lesage-papier-washi-tokyo.jpg);
+}
+
 /* Pop-up de visite */
 .tour-modal {
   position: fixed;
