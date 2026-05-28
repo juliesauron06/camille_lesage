@@ -724,7 +724,7 @@ section[id] {
 
 /* Images de fond des ateliers (Expériences) */
 .exp-card--sake {
-  --cover: url(../assets/images/camille-lesage-degustation-de-sake-tokyo.jpg);
+  --cover: url(../assets/images/camille-lesage-tokyo-sake-degustation.jpg);
 }
 
 .exp-card--furin {
@@ -732,12 +732,24 @@ section[id] {
 }
 
 .exp-card--washi {
-  --cover: url(../assets/images/camille-lesage-papier-washi-tokyo.jpg);
+  --cover: url(../assets/images/camille-lesage-tokyo-washi.jpg);
+}
+
+.exp-card--wagashi {
+  --cover: url(../assets/images/camille-lesage-tokyo-wagashi.jpg);
+}
+
+.exp-card--ceremonie {
+  --cover: url(../assets/images/camille-lesage-macha-a-tokyo.jpg);
+}
+
+.exp-card--lovot {
+  --cover: url(../assets/images/camille-lesage-tokyo-lovot.jpg);
 }
 
 /* Photos des destinations (Au-delà de Tokyo) */
 .dest-card--nikko {
-  --cover: url(../assets/images/camille-lesage-a-nikko-pagode.jpg);
+  --cover: url(../assets/images/camille-lesage-a-nikko-gorges.jpg);
 }
 
 .dest-card--yokohama {
@@ -745,7 +757,7 @@ section[id] {
 }
 
 .dest-card--kamakura {
-  --cover: url(../assets/images/camille-lesage-a-kamakura.jpg);
+  --cover: url(../assets/images/camille-lesage-kamakura-bouddha.jpg);
 }
 
 .dest-card--enoshima {
@@ -753,7 +765,7 @@ section[id] {
 }
 
 .dest-card--hakone {
-  --cover: url(../assets/images/camille-lesage-a-hakone-temple.jpg);
+  --cover: url(../assets/images/camille-lesage-hakone.jpg);
 }
 
 .dest-card--kyoto {
@@ -761,7 +773,7 @@ section[id] {
 }
 
 .dest-card--uji {
-  --cover: url(../assets/images/camille-a-uji-nintendo-musuem.jpg);
+  --cover: url(../assets/images/camille-lesage-uji-macha.jpg);
 }
 
 .dest-card--nara {
