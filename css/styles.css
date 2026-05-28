@@ -1134,6 +1134,73 @@ body.modal-open {
 }
 
 /* ==========================================================================
+   Section séjour clé en main
+   ========================================================================== */
+
+.bespoke {
+  padding-block: var(--space-xl);
+  background-color: var(--cream-dark);
+}
+
+.section-header--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.bespoke-grid {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.bespoke-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: var(--space-md);
+  text-align: center;
+  border-radius: var(--radius);
+  background-color: var(--cream-light);
+  box-shadow: 0 10px 30px rgba(26, 26, 24, 0.06);
+}
+
+.bespoke-card__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--sage);
+  stroke-width: 1.6;
+}
+
+.bespoke-card h3 {
+  font-size: 1.1rem;
+}
+
+.bespoke-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.bespoke-cta {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .bespoke-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .bespoke-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
    Avis clients
    ========================================================================== */
 .reviews {
