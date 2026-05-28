@@ -403,6 +403,7 @@ section[id] {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-xl);
+  background-color: var(--cream-dark);
 }
 
 .section-kanji {
@@ -539,10 +540,6 @@ section[id] {
   --video-aspect: 9 / 16;
   max-width: 340px;
   margin-inline: auto;
-}
-
-main > section:nth-child(even) {
-  background-color: var(--cream-dark);
 }
 
 /* ==========================================================================
@@ -980,6 +977,7 @@ body.modal-open {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-xl);
+  background-color: var(--cream-dark);
 }
 
 .beyond > .container {
