@@ -329,6 +329,13 @@ section[id] {
   background-repeat: no-repeat;
 }
 
+/* En portrait (tablette/mobile), recadrer la photo sur le Mont Fuji (à gauche) */
+@media (orientation: portrait) {
+  .hero {
+    background-position: 25% center;
+  }
+}
+
 .hero-content {
   max-width: 60rem;
   display: flex;
