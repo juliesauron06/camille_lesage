@@ -1011,36 +1011,42 @@ body.modal-open {
   gap: var(--space-xs);
 }
 
-/* Mosaïque — 2 colonnes (mobile) : placement par l'ordre du DOM + spans */
-.dest-card:nth-child(1) { grid-column: span 2; }                   /* Nikkō */
-.dest-card:nth-child(2) { grid-column: span 2; grid-row: span 2; } /* Mont Fuji */
-.dest-card:nth-child(7) { grid-column: span 2; }                   /* Kyōto */
-.dest-card:nth-child(8) { grid-column: span 2; }                   /* Uji */
+/* Mosaïque — 2 colonnes (mobile < 640px) */
+.dest-card:nth-child(1)  { grid-column: 1 / 3; grid-row: 1; }     /* Nikkō */
+.dest-card:nth-child(2)  { grid-column: 1 / 3; grid-row: 2 / 4; } /* Mont Fuji */
+.dest-card:nth-child(3)  { grid-column: 1 / 3; grid-row: 5; }     /* Hakone */
+.dest-card:nth-child(4)  { grid-column: 2;     grid-row: 4; }     /* Yokohama */
+.dest-card:nth-child(5)  { grid-column: 2;     grid-row: 6 / 8; } /* Kamakura */
+.dest-card:nth-child(6)  { grid-column: 1;     grid-row: 4; }     /* Enoshima */
+.dest-card:nth-child(7)  { grid-column: 1;     grid-row: 6; }     /* Kyōto */
+.dest-card:nth-child(8)  { grid-column: 1;     grid-row: 7; }     /* Uji */
+.dest-card:nth-child(9)  { grid-column: 1;     grid-row: 8; }     /* Nara */
+.dest-card:nth-child(10) { grid-column: 2;     grid-row: 8; }     /* Miyajima */
 
-/* Mosaïque — 3 colonnes */
+/* Mosaïque — 3 colonnes (≥ 640px) */
 @media (min-width: 640px) {
   .beyond-gallery { grid-template-columns: repeat(3, 1fr); }
   .dest-card:nth-child(1)  { grid-column: 1;     grid-row: 1; }     /* Nikkō */
   .dest-card:nth-child(2)  { grid-column: 2 / 4; grid-row: 1 / 3; } /* Mont Fuji */
-  .dest-card:nth-child(3)  { grid-column: 1;     grid-row: 2; }     /* Hakone */
+  .dest-card:nth-child(3)  { grid-column: 1 / 3; grid-row: 3; }     /* Hakone */
   .dest-card:nth-child(4)  { grid-column: 1;     grid-row: 4; }     /* Yokohama */
-  .dest-card:nth-child(5)  { grid-column: 1 / 3; grid-row: 3; }     /* Kamakura */
-  .dest-card:nth-child(6)  { grid-column: 3;     grid-row: 3; }     /* Enoshima */
-  .dest-card:nth-child(7)  { grid-column: 1 / 3; grid-row: 5; }     /* Kyōto */
-  .dest-card:nth-child(8)  { grid-column: 3;     grid-row: 5; }     /* Uji */
-  .dest-card:nth-child(9)  { grid-column: 2;     grid-row: 4; }     /* Nara */
-  .dest-card:nth-child(10) { grid-column: 3;     grid-row: 4; }     /* Miyajima */
+  .dest-card:nth-child(5)  { grid-column: 3;     grid-row: 4 / 6; } /* Kamakura */
+  .dest-card:nth-child(6)  { grid-column: 1;     grid-row: 2; }     /* Enoshima */
+  .dest-card:nth-child(7)  { grid-column: 1;     grid-row: 5; }     /* Kyōto */
+  .dest-card:nth-child(8)  { grid-column: 3;     grid-row: 3; }     /* Uji */
+  .dest-card:nth-child(9)  { grid-column: 2;     grid-row: 5; }     /* Nara */
+  .dest-card:nth-child(10) { grid-column: 2;     grid-row: 4; }     /* Miyajima */
 }
 
-/* Mosaïque — 4 colonnes */
+/* Mosaïque — 4 colonnes (≥ 960px) */
 @media (min-width: 960px) {
   .beyond-gallery { grid-template-columns: repeat(4, 1fr); }
   .dest-card:nth-child(1)  { grid-column: 1 / 3; grid-row: 1; }     /* Nikkō */
   .dest-card:nth-child(2)  { grid-column: 3 / 5; grid-row: 1 / 3; } /* Mont Fuji */
-  .dest-card:nth-child(3)  { grid-column: 1;     grid-row: 2; }     /* Hakone */
+  .dest-card:nth-child(3)  { grid-column: 1 / 3; grid-row: 3; }     /* Hakone */
   .dest-card:nth-child(4)  { grid-column: 2;     grid-row: 2; }     /* Yokohama */
-  .dest-card:nth-child(5)  { grid-column: 1 / 3; grid-row: 3; }     /* Kamakura */
-  .dest-card:nth-child(6)  { grid-column: 3;     grid-row: 3 / 5; } /* Enoshima */
+  .dest-card:nth-child(5)  { grid-column: 3;     grid-row: 3 / 5; } /* Kamakura */
+  .dest-card:nth-child(6)  { grid-column: 1;     grid-row: 2; }     /* Enoshima */
   .dest-card:nth-child(7)  { grid-column: 4;     grid-row: 3; }     /* Kyōto */
   .dest-card:nth-child(8)  { grid-column: 4;     grid-row: 4; }     /* Uji */
   .dest-card:nth-child(9)  { grid-column: 1;     grid-row: 4; }     /* Nara */
