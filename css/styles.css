@@ -323,17 +323,10 @@ section[id] {
   background-color: var(--ink);
   background-image:
     linear-gradient(rgba(26, 26, 24, 0.35), rgba(26, 26, 24, 0.55)),
-    url("../assets/images/test.jpg");
+    url("../assets/images/test-2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-/* En portrait (tablette/mobile), recadrer la photo sur le Mont Fuji (à gauche) */
-@media (orientation: portrait) {
-  .hero {
-    background-position: 25% center;
-  }
 }
 
 .hero-content {
