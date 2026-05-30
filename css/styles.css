@@ -323,7 +323,7 @@ section[id] {
   background-color: var(--ink);
   background-image:
     linear-gradient(rgba(26, 26, 24, 0.35), rgba(26, 26, 24, 0.55)),
-    url("../assets/images/test-3.jpg");
+    url("../assets/images/test-4.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
