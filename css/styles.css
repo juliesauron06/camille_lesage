@@ -373,6 +373,12 @@ section[id] {
   max-width: 22rem;
 }
 
+@media (max-width: 950px) {
+  .hero {
+    background-position: 65% center;
+  }
+}
+
 /* Desktop : tout aligné à gauche, CTA côte à côte */
 @media (min-width: 951px) {
   .hero {
